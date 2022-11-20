@@ -42,6 +42,14 @@ header
 {   /* alignement en colonne de la bannière et du titre */
     display: flex;
     flex-direction: column;
+ /*   justify-content: center;*/
+    align-items: center;    
+
+}
+
+#titre_header img
+{   
+    width: 80%;
 }
 
 header h1
@@ -107,7 +115,7 @@ nav li
 
 nav h2
 {
-       font-size: 1.3em;
+ font-size: 1.3em;
 }
 
 nav a
@@ -116,7 +124,7 @@ nav a
     color: #181818;
     padding-left: 3px;
     text-decoration: none;
-   /* padding-right: 20px;*/
+    /* padding-right: 20px;*/
 }
 
 nav a:hover
@@ -194,6 +202,13 @@ article
     flex: 3;
 }
 
+#colonne_droite
+{
+    display: flex;
+    flex: 0.4;
+    flex-direction: column;
+}
+
 aside
 {
     flex: 0.2;
@@ -205,6 +220,7 @@ aside
     color: white;
     font-size: 0.9em;
     margin-bottom: 16px;
+    text-align: center;
 }
 
 #fleche_bulle
@@ -214,14 +230,10 @@ aside
     left: -12px;
 }
 
-#chat_papillon
-{
-    text-align: center;
-}
-
 #chat_papillon img
 {
     border: 1px solid #131;
+    width: 200px;
 }
 
 aside img
@@ -229,16 +241,8 @@ aside img
     margin: 0 5px 5px 0;
 }
 
-#colonne_droite
-{
-    display: flex;
-    flex: 0.4;
-    flex-direction: column;
-}
-
 #protagonistes
 {
-    text-align: center;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -268,7 +272,7 @@ footer p, footer ul
 footer h1
 {
   /*  text-align: center;*/
-    font-size: 2em;
+  font-size: 2em;
 }
 
 #reseaux
@@ -318,4 +322,53 @@ footer h1
 {
     display: block;
     margin: 2px;
+}
+
+
+/* Parametres responsive pour s'adapter aux petites résolutions d ecran */
+
+@media all and (max-width: 900px)
+{
+    #bloc_page
+    {
+        width: auto;
+    }
+/*
+    #banniere_image
+    {
+        display: none;
+    }
+*/
+    header
+    {   
+        flex-direction: column;
+        align-items: center;
+    }
+
+        section
+    {
+        flex-direction: column;
+    }
+
+    article, aside
+    {
+        width: auto;
+        margin-bottom: 15px;
+    }
+    
+    #fleche_bulle
+    {
+        display: none;
+    }
+    
+    #chat_papillon img
+    {
+        width: 90%;
+    }
+    
+    /*aside p:last-child
+    {
+        text-align: center;
+    }*/
+
 }
